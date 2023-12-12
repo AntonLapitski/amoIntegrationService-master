@@ -1,0 +1,38 @@
+version: '3'
+networks:
+  bridge1:
+    external:
+      name: crmpbx_bridge
+services:
+  php:
+    image: yiisoftware/yii2-php:8.1-apache
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+    ports:
+      - "$PORT:80"
+    environment:
+      - DB_ADDRESS=$DB_ADDRESS
+      - DB_NAME=$DB_NAME
+      - DB_USERNAME=$DB_USERNAME
+      - DB_PASSWORD=$DB_PASSWORD
+      - API_AUTH_KEY=$API_AUTH_KEY
+      - PBX_CORE_SERVICE_ADDRESS=$PBX_CORE_SERVICE_ADDRESS
+      - AUTH_VAULT_SERVICE_ADDRESS=$AUTH_VAULT_SERVICE_ADDRESS
+      - AUTH_VAULT_SERVICE_ACCESS_TOKEN=$AUTH_VAULT_SERVICE_ACCESS_TOKEN
+      - LOG_SERVICE_ADDRESS=$LOG_SERVICE_ADDRESS
+      - LOG_SERVICE_TIMEOUT=$LOG_SERVICE_TIMEOUT
+      - LOG_SERVICE_ACCESS_TOKEN=$LOG_SERVICE_ACCESS_TOKEN
+      - ENV_MODE=$ENV_MODE
+      - DEBUG_MODE=$DEBUG_MODE
+      - COM_CHAT_CHANNEL_ID=$COM_CHAT_CHANNEL_ID
+      - COM_CHAT_SECRET_KEY=$COM_CHAT_SECRET_KEY
+      - RU_CHAT_CHANNEL_ID=$RU_CHAT_CHANNEL_ID
+      - RU_CHAT_SECRET_KEY=$RU_CHAT_SECRET_KEY
+      - AMO_INTEGRATION_SECRET_KEY=$AMO_INTEGRATION_SECRET_KEY
+      - AMO_INTEGRATION_ID=$AMO_INTEGRATION_ID
+      - AMO_INTEGRATION_REDIRECT_URL=$AMO_INTEGRATION_REDIRECT_URL
+    networks:
+      bridge1:
+        aliases:
+          - $SERVICE_NAME_ALIAS
