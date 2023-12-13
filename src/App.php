@@ -13,7 +13,10 @@ use app\src\httpClient\HttpClient;
 class App
 {
     /**
+     * инициализация события
+     *
      * @param \yii\web\Request $request
+     * @return void
      */
     public function init(\yii\web\Request $request)
     {
