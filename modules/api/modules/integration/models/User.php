@@ -14,6 +14,8 @@ use yii\web\Linkable;
 class User extends \app\models\User implements Linkable
 {
     /**
+     * Дополнительные поля
+     *
      * @return array
      */
     public function extraFields(): array
@@ -24,6 +26,8 @@ class User extends \app\models\User implements Linkable
     }
 
     /**
+     * Забрать ссылки
+     *
      * @return array
      */
     public function getLinks()

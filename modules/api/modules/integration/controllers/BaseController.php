@@ -8,11 +8,14 @@ use yii\web\ForbiddenHttpException;
 
 /**
  * Class BaseController
+ * Основной рест контроллер
  * @package app\modules\api\modules\integration\controllers
  */
 abstract class BaseController extends \yii\rest\ActiveController
 {
     /**
+     * Настройка поведений и корс политики
+     *
      * @return array
      */
     public function behaviors(): array
@@ -35,6 +38,8 @@ abstract class BaseController extends \yii\rest\ActiveController
     }
 
     /**
+     * Проверка доступа
+     *
      * @param $action
      * @param null $model
      * @param array $params

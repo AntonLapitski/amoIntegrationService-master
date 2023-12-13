@@ -14,6 +14,8 @@ use app\src\pbx\event\Event;
 class LeadFilter
 {
     /**
+     * проверка заблокирован ли для создания
+     *
      * @param Contact $contact
      * @param $settings
      * @param $event
@@ -45,6 +47,8 @@ class LeadFilter
     }
 
     /**
+     * является ли неотсортированным
+     *
      * @param $settings
      * @return bool
      */

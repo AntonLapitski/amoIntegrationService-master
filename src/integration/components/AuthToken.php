@@ -13,16 +13,48 @@ use crmpbx\httpClient\Response;
 
 /**
  * Class AuthToken
+ * @property AuthTokenModel $model
+ * @property string $integrationSid
+ * @property string $companySid
+ * @property string $domain
+ * @property HttpClient $httpClient
  * @package app\src\integration\components
  */
 class AuthToken
 {
+    /**
+     * модель с токеном для авторизации
+     *
+     * @var AuthTokenModel
+     */
     private AuthTokenModel $model;
 
+    /**
+     * идентификатор интеграции
+     *
+     * @var string
+     */
     private string $integrationSid;
+
+    /**
+     * идентификатор компании
+     *
+     * @var string
+     */
     private string $companySid;
+
+    /**
+     * домен
+     *
+     * @var string
+     */
     private string $domain;
 
+    /**
+     * клиент объект
+     *
+     * @var HttpClient
+     */
     private HttpClient $httpClient;
 
     /**
@@ -40,6 +72,8 @@ class AuthToken
     }
 
     /**
+     * сетинг модели
+     *
      * @param Response|null $response
      * @return AuthTokenModel
      */
@@ -50,6 +84,8 @@ class AuthToken
     }
 
     /**
+     * установка или апдейт параметров
+     *
      * @param InstallRequest $request
      * @return AuthTokenModel
      */
@@ -63,6 +99,8 @@ class AuthToken
     }
 
     /**
+     * отправление запроса и получение ответа
+     *
      * @param $method
      * @param $body
      * @return mixed
@@ -75,6 +113,8 @@ class AuthToken
     }
 
     /**
+     * возвращение авторизационной модели
+     *
      * @return AuthTokenModel
      */
     public function get(): AuthTokenModel
@@ -88,6 +128,8 @@ class AuthToken
     }
 
     /**
+     * сетинг авторизационной модели
+     *
      * @param InstallRequest $request
      * @return AuthTokenModel
      */
@@ -99,6 +141,8 @@ class AuthToken
     }
 
     /**
+     * обновление авторизационной модели
+     *
      * @param InstallRequest $request
      * @return AuthTokenModel
      */
@@ -110,6 +154,9 @@ class AuthToken
     }
 
     /**
+     * удаление
+     *
+     *
      * @return bool
      */
     public function delete(): bool
@@ -126,6 +173,8 @@ class AuthToken
     }
 
     /**
+     * получение идетификаторов
+     *
      * @return array
      */
     private function searchTokenRequestBody(): array
@@ -137,6 +186,8 @@ class AuthToken
     }
 
     /**
+     * сетинг массива значений ответного тела
+     *
      * @param InstallRequest $request
      * @return array
      */

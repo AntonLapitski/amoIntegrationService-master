@@ -11,16 +11,21 @@ use yii\db\ActiveRecord;
 
 /**
  * Class UserController
+ * @property string $modelClass
  * @package app\modules\api\modules\integration\controllers
  */
 class UserController extends BaseController
 {
     /**
+     * Название класса модели
+     *
      * @var string
      */
     public $modelClass = 'app\modules\api\modules\integration\models\User';
 
     /**
+     * Различные экшны
+     *
      * @return array
      */
     public function actions(): array
@@ -31,6 +36,8 @@ class UserController extends BaseController
     }
 
     /**
+     * Поиск с помощью модели
+     *
      * @return \yii\data\ActiveDataProvider
      */
     public function prepareDataProvider(): \yii\data\ActiveDataProvider

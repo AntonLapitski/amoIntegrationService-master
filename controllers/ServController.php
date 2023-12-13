@@ -8,12 +8,15 @@ use Yii;
 
 /**
  * Class ServController
+ * Класс расширяет рест контроллер
  * @package app\controllers
  */
 class ServController extends \yii\rest\Controller
 {
     /**
-     * @return mixed
+     * Проверяет пройдет ли идентификатор доступа авторизации
+     *
+     * @return array
      */
     public function behaviors()
     {
@@ -26,6 +29,8 @@ class ServController extends \yii\rest\Controller
     }
 
     /**
+     * Возвращает метод  модели, которая инциализируется с параметрами в EntityService
+     *
      * @param $entity
      * @return array|string
      */
@@ -41,7 +46,10 @@ class ServController extends \yii\rest\Controller
 //    }
 
     /**
+     * дамп кастомных полей
+     *
      * @param $sid
+     * @return void
      */
     public function actionCustomFields($sid)
     {

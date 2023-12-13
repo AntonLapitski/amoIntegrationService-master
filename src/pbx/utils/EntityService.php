@@ -12,6 +12,8 @@ use yii\helpers\Json;
 class EntityService
 {
     /**
+     * получить параметры
+     *
      * @param $entity
      * @param $request
      * @return array|string
@@ -39,6 +41,8 @@ class EntityService
     }
 
     /**
+     * добавить звонок
+     *
      * @param $sid
      * @return array
      */
@@ -52,6 +56,8 @@ class EntityService
     }
 
     /**
+     * добавить сообщение
+     *
      * @param $sid
      * @return string
      */
@@ -61,6 +67,8 @@ class EntityService
     }
 
     /**
+     * выполнить запуск метода из системной переменной
+     *
      * @param $action
      * @param $sid
      * @return string

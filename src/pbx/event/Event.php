@@ -19,22 +19,27 @@ class Event
      *
      */
     const CALL_STATUS = 'call_status';
+
     /**
      *
      */
     const CALL_INIT = 'call_init';
+
     /**
      *
      */
     const CALL_ROUTE = 'call_route';
+
     /**
      *
      */
     const CALL_INTERNAL = 'internal';
+
     /**
      *
      */
     const MESSAGE_GET = 'message_get';
+
     /**
      *
      */

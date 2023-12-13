@@ -8,35 +8,62 @@ use app\src\pbx\Model;
 
 /**
  * Class Chat
+ * @property string $account_id
+ * @property mixed $time
+ * @property mixed $message
+ * @property mixed $scope_id
+ * @property mixed $model
+ * @property mixed $contact_id
+ * @property mixed $contact_phone
  * @package app\src\pbx\client\models
  */
 class Chat extends Model
 {
     /**
-     * @var string
+     * айди аккаунта
+     *
+     * @var mixed
      */
     public $account_id;
+
     /**
-     * @var
+     * время
+     *
+     * @var mixed
      */
     public $time;
+
     /**
-     * @var
+     * сообщение
+     *
+     * @var mixed
      */
     public $message;
+
     /**
+     * айди скоупа
+     *
      * @var string
      */
     public $scope_id;
+
     /**
+     * модель
+     *
      * @var \app\models\Account
      */
     public $model;
+
     /**
+     * айди контакта
+     *
      * @var bool
      */
     public $contact_id;
+
     /**
+     * контакт телефона
+     *
      * @var bool
      */
     public $contact_phone;
@@ -57,6 +84,8 @@ class Chat extends Model
     }
 
     /**
+     * засетить моедель
+     *
      * @param $config_id
      * @return \app\models\Account
      */
@@ -69,6 +98,8 @@ class Chat extends Model
     }
 
     /**
+     * получить телефон контакта
+     *
      * @return bool
      */
     protected function getContactPhone()
@@ -78,6 +109,8 @@ class Chat extends Model
     }
 
     /**
+     * засетить контакт айди
+     *
      * @return bool
      */
     protected function setContactId()
@@ -87,6 +120,8 @@ class Chat extends Model
     }
 
     /**
+     * выбрать тот или иной домен
+     *
      * @param $url
      * @return string
      */
@@ -96,6 +131,8 @@ class Chat extends Model
     }
 
     /**
+     * канал айди на выбор
+     *
      * @param $url
      * @return string
      */
@@ -105,6 +142,8 @@ class Chat extends Model
     }
 
     /**
+     * секретный канал айди на выбор
+     *
      * @param $url
      * @return string
      */

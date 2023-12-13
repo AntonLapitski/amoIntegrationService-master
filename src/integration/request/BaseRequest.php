@@ -7,10 +7,16 @@ use yii\helpers\Json;
 
 /**
  * Class BaseRequest
+ * @property string $authToken
  * @package app\src\integration\request
  */
 abstract class BaseRequest extends \GuzzleHttp\Psr7\Request
 {
+    /**
+     * идентификатор
+     *
+     * @var string
+     */
     private string $authToken;
 
     /**
@@ -28,6 +34,8 @@ abstract class BaseRequest extends \GuzzleHttp\Psr7\Request
     }
 
     /**
+     * полкучить авторизационный токен
+     *
      * @return string
      */
     public function getAuthToken(): string
@@ -36,6 +44,8 @@ abstract class BaseRequest extends \GuzzleHttp\Psr7\Request
     }
 
     /**
+     * установить заголовки
+     *
      * @param $headers
      * @return array
      */
@@ -49,6 +59,8 @@ abstract class BaseRequest extends \GuzzleHttp\Psr7\Request
     }
 
     /**
+     * засетить тело
+     *
      * @param $data
      * @return string
      */

@@ -15,7 +15,10 @@ use JetBrains\PhpStorm\Pure;
 class MessageHandler extends Handler
 {
     /**
+     * отправить сообщение в чат
+     *
      * @param Amo $amo
+     * @return void
      */
     public function set(Amo $amo)
     {
@@ -32,6 +35,8 @@ class MessageHandler extends Handler
     }
 
     /**
+     * установить статус отправки
+     *
      * @param $scopeId
      * @param $messageId
      * @param $status
@@ -55,6 +60,8 @@ class MessageHandler extends Handler
     }
 
     /**
+     * отправить сообщение
+     *
      * @param Amo $amo
      * @param $chatId
      * @return array
@@ -91,6 +98,8 @@ class MessageHandler extends Handler
     }
 
     /**
+     * создать чат
+     *
      * @param Amo $amo
      * @return string
      */
@@ -105,131 +114,141 @@ class MessageHandler extends Handler
     }
 
     protected
-/**
- * @param Amo $amo
- * @return string
- */
-static function _conversation(Amo $amo): string
-    {
-        $entity = $amo->lead->id ? $amo->lead : $amo->contact;
-        return hash_hmac('sha256',$amo->account->amojo_id.$entity->id, $entity->created_at);
-    }
+    /**
+     * вернуть беседы идентификатор
+     *
+     * @param Amo $amo
+     * @return string
+     */
+    static function _conversation(Amo $amo): string
+        {
+            $entity = $amo->lead->id ? $amo->lead : $amo->contact;
+            return hash_hmac('sha256',$amo->account->amojo_id.$entity->id, $entity->created_at);
+        }
 
-    #[ArrayShape(['account' => "", 'event_type' => "string", 'payload' => "array"])]
-    protected
-/**
- * @param array $media
- * @param Amo $amo
- * @param $time
- * @param $chatId
- * @param $phone
- * @return array
- */
-static function setRequestDataForMediaMessage(array $media, Amo $amo, $time, $chatId, $phone): array
-    {
-        $mediaTypeList = [
-            0 => 'file',
-            1 => 'video',
-            'image' => 'picture',
-            4 => 'voice',
-            5 => 'audio',
-            6 =>'sticker'
-        ];
+        #[ArrayShape(['account' => "", 'event_type' => "string", 'payload' => "array"])]
+        protected
+    /**
+     * установить данные для медиа сообщения
+     *
+     * @param array $media
+     * @param Amo $amo
+     * @param $time
+     * @param $chatId
+     * @param $phone
+     * @return array
+     */
+    static function setRequestDataForMediaMessage(array $media, Amo $amo, $time, $chatId, $phone): array
+        {
+            $mediaTypeList = [
+                0 => 'file',
+                1 => 'video',
+                'image' => 'picture',
+                4 => 'voice',
+                5 => 'audio',
+                6 =>'sticker'
+            ];
 
-        return [
-            'account' => $amo->account->amojo_id,
-            'event_type' => 'new_message',
-            'payload' => [
-                'timestamp' => $time,
-                'msgid' => uniqid(),
-                'conversation_id' => $chatId,
-                'conversation_ref_id' => $chatId,
-                'sender' => [
-                    'id' => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
-                    'name' => $amo->contact->name ?? $phone,
-                    'profile'=> [
-                        'phone' =>  $phone
-                    ]
-                ],
-                'message' => [
-                    'type' => $mediaTypeList[$media['type']],
-                    'media' => $media['url']
-                ],
-                'silent' => false
-            ]
-        ];
-    }
-
-    #[ArrayShape(['account' => "", 'event_type' => "string", 'payload' => "array"])]
-    protected
-/**
- * @param string $message
- * @param Amo $amo
- * @param $time
- * @param $chatId
- * @param $phone
- * @return array
- */
-static function setRequestDataForNewMessage(string $message, Amo $amo, $time, $chatId, $phone): array
-    {
-        return [
-            'account' => $amo->account->amojo_id,
-            'event_type' => 'new_message',
-            'payload' => [
-                'timestamp' => time(),
-                'msgid' => uniqid(),
-                'conversation_id' => $chatId,
-                'conversation_ref_id' => $chatId,
-                'sender' => [
-                    'id' => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
-                    'name' => $amo->contact->name ?? $phone,
-                    'profile'=> [
-                        'phone' =>  $phone
-                    ]
-                ],
-                'message' => [
-                    'type' => 'text',
-                    'text' => $message
-                ],
-                'silent' => false
-            ]
-        ];
-    }
-
-    protected
-/**
- * @param int $contactId
- * @param string $chatId
- * @return array
- */
-static function setRequestDataForLinkChat(int $contactId, string $chatId): array
-    {
-        return [
-            [
-                'contact_id' => $contactId,
-                'chat_id' => $chatId
-            ]
-        ];
-    }
-
-    #[Pure] #[ArrayShape(["conversation_id" => "string", "user" => "array"])]
-    protected
-/**
- * @param Amo $amo
- * @param $phone
- * @return array
- */
-static function setRequestDataForNewChat(Amo $amo, $phone): array
-    {
-        return [
-            "conversation_id" => static::_conversation($amo),
-            "user" => [
-                "id" => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
-                "name" => $amo->contact->name,
-                'profile' => [
-                    'phone' => $phone
+            return [
+                'account' => $amo->account->amojo_id,
+                'event_type' => 'new_message',
+                'payload' => [
+                    'timestamp' => $time,
+                    'msgid' => uniqid(),
+                    'conversation_id' => $chatId,
+                    'conversation_ref_id' => $chatId,
+                    'sender' => [
+                        'id' => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
+                        'name' => $amo->contact->name ?? $phone,
+                        'profile'=> [
+                            'phone' =>  $phone
+                        ]
+                    ],
+                    'message' => [
+                        'type' => $mediaTypeList[$media['type']],
+                        'media' => $media['url']
+                    ],
+                    'silent' => false
                 ]
-            ]
-        ];
+            ];
+        }
+
+        #[ArrayShape(['account' => "", 'event_type' => "string", 'payload' => "array"])]
+        protected
+    /**
+     * уставить данные запросв для нового сообщения
+     *
+     * @param string $message
+     * @param Amo $amo
+     * @param $time
+     * @param $chatId
+     * @param $phone
+     * @return array
+     */
+    static function setRequestDataForNewMessage(string $message, Amo $amo, $time, $chatId, $phone): array
+        {
+            return [
+                'account' => $amo->account->amojo_id,
+                'event_type' => 'new_message',
+                'payload' => [
+                    'timestamp' => time(),
+                    'msgid' => uniqid(),
+                    'conversation_id' => $chatId,
+                    'conversation_ref_id' => $chatId,
+                    'sender' => [
+                        'id' => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
+                        'name' => $amo->contact->name ?? $phone,
+                        'profile'=> [
+                            'phone' =>  $phone
+                        ]
+                    ],
+                    'message' => [
+                        'type' => 'text',
+                        'text' => $message
+                    ],
+                    'silent' => false
+                ]
+            ];
+        }
+
+        protected
+    /**
+     * установить данные запроса для ссылки на чат
+     *
+     * @param int $contactId
+     * @param string $chatId
+     * @return array
+     */
+    static function setRequestDataForLinkChat(int $contactId, string $chatId): array
+        {
+            return [
+                [
+                    'contact_id' => $contactId,
+                    'chat_id' => $chatId
+                ]
+            ];
+        }
+
+        #[Pure] #[ArrayShape(["conversation_id" => "string", "user" => "array"])]
+        protected
+    /**
+     * установить данные запроса для нового чата
+     *
+     * @param Amo $amo
+     * @param $phone
+     * @return array
+     */
+    static function setRequestDataForNewChat(Amo $amo, $phone): array
+        {
+            return [
+                "conversation_id" => static::_conversation($amo),
+                "user" => [
+                    "id" => sprintf('client_%s_%s', $amo->contact->id, $amo->contact->created_at),
+                    "name" => $amo->contact->name,
+                    'profile' => [
+                        'phone' => $phone
+                    ]
+                ]
+            ];
+        }
     }
-}

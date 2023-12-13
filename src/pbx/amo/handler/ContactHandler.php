@@ -12,6 +12,8 @@ use app\src\pbx\client\models\Phone;
 class ContactHandler extends Handler
 {
     /**
+     * вернуть новый созданный контакт
+     *
      * @param $id
      * @return Contact
      */
@@ -21,6 +23,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * вернуть контакт в зависимости от параметров
+     *
      * @param Phone $phone
      * @param $responsibleUser
      * @return Contact
@@ -43,6 +47,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * вернуть контакт с заданными данными
+     *
      * @param $data
      * @param Phone $phone
      * @param $responsibleUser
@@ -54,6 +60,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * добавить новый контакт
+     *
      * @param Phone $phone
      * @param $responsibleUser
      * @return Contact|null
@@ -67,6 +75,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * создать контакт исходя из параметров
+     *
      * @param Phone $phone
      * @param $responsibleUser
      * @return |null
@@ -86,6 +96,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * обновить контакт
+     *
      * @param $contactId
      * @param $responsibleUser
      * @return |null
@@ -103,6 +115,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * искать в литсе контактов
+     *
      * @param Phone $phone
      * @return bool|mixed
      */
@@ -119,6 +133,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * получить результат сделки
+     *
      * @param $dealList
      * @return bool
      */
@@ -137,6 +153,8 @@ class ContactHandler extends Handler
     }
 
     /**
+     * заполнить данные для создания нового контакта
+     *
      * @param $phone
      * @param $name
      * @param $responsibleUser

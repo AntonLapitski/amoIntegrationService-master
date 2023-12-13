@@ -7,109 +7,207 @@ use app\src\pbx\Model;
 
 /**
  * Class Contact
+ * @property mixed $isNew
+ * @property mixed $id
+ * @property mixed $name
+ * @property mixed $first_name
+ * @property mixed $last_name
+ * @property mixed $responsible_user_id
+ * @property mixed $created_by
+ * @property mixed $created_at
+ * @property mixed $updated_at
+ * @property mixed $account_id
+ * @property mixed $updated_by
+ * @property mixed $group_id
+ * @property mixed $company
+ * @property mixed $leads
+ * @property mixed $is_deleted
+ * @property mixed $is_unsorted
+ * @property mixed $closest_task_at
+ * @property mixed $tags
+ * @property mixed $custom_fields
+ * @property mixed $custom_fields_values
+ * @property mixed $customers
+ * @property mixed $_links
+ * @property mixed $self
+ * @property mixed $time
+ * @property mixed $_embedded
  * @package app\src\pbx\amo\models
  */
 class Contact extends Model
 {
     /**
-     * @var
+     * является ли новым
+     *
+     * @var mixed
      */
     public $isNew;
 
     /**
-     * @var
+     * идентификатор
+     *
+     * @var mixed
      */
     public $id;
+
     /**
-     * @var
+     * имя
+     *
+     * @var mixed
      */
     public $name;
+
     /**
-     * @var
+     * первое имя
+     *
+     * @var mixed
      */
     public $first_name;
+
     /**
-     * @var
+     * последнее имя
+     *
+     * @var mixed
      */
     public $last_name;
+
     /**
-     * @var
+     * ответственный айди
+     *
+     * @var mixed
      */
     public $responsible_user_id;
+
     /**
-     * @var
+     * создан кем
+     *
+     * @var mixed
      */
     public $created_by;
+
     /**
-     * @var
+     * создан когда
+     *
+     * @var mixed
      */
     public $created_at;
+
     /**
-     * @var
+     * обновлен когда
+     *
+     * @var mixed
      */
     public $updated_at;
+
     /**
-     * @var
+     * айди аккаунта
+     *
+     * @var mixed
      */
     public $account_id;
+
     /**
-     * @var
+     * обновлен кем
+     *
+     * @var mixed
      */
     public $updated_by;
+
     /**
-     * @var
+     * айди группы
+     *
+     * @var mixed
      */
     public $group_id;
+
     /**
-     * @var
+     * компания
+     *
+     * @var mixed
      */
     public $company;
+
     /**
-     * @var
+     * лиды
+     *
+     * @var mixed
      */
     public $leads;
+
     /**
-     * @var
+     * является ли удалееным
+     *
+     * @var mixed
      */
     public $is_deleted;
+
     /**
-     * @var
+     * является ли неотсортированным
+     *
+     * @var mixed
      */
     public $is_unsorted;
+
     /**
-     * @var
+     * ближайшая задача по времени
+     *
+     * @var mixed
      */
     public $closest_task_at;
+
     /**
-     * @var
+     * теги
+     *
+     * @var mixed
      */
     public $tags;
+
     /**
-     * @var
+     * кастомные поля
+     *
+     * @var mixed
      */
     public $custom_fields;
+
     /**
-     * @var
+     * кастомные значения полей
+     *
+     * @var mixed
      */
     public $custom_fields_values;
+
     /**
-     * @var
+     * клиенты
+     *
+     * @var mixed
      */
     public $customers;
+
     /**
-     * @var
+     * ссылки
+     *
+     * @var mixed
      */
     public $_links;
+
     /**
-     * @var
+     * сам ли
+     *
+     * @var mixed
      */
     public $self;
+
     /**
-     * @var
+     * время
+     *
+     * @var mixed
      */
     public $time;
+
     /**
-     * @var
+     * встроенный
+     *
+     * @var mixed
      */
     public $_embedded;
 
@@ -125,6 +223,8 @@ class Contact extends Model
     }
 
     /**
+     * получить телефон
+     *
      * @param $options
      * @return Phone
      */
@@ -139,6 +239,8 @@ class Contact extends Model
     }
 
     /**
+     * получить список телефонов
+     *
      * @return array
      */
     public function getPhoneList(): array

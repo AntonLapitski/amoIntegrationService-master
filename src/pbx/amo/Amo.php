@@ -34,16 +34,61 @@ use Codeception\Exception\ContentNotFound;
  */
 class Amo
 {
+    /**
+     * образ
+     *
+     * @var Instance
+     */
     public Instance $instance;
+
+    /**
+     * событие
+     *
+     * @var string
+     */
     public string $event;
 
+    /**
+     * запрос
+     *
+     * @var Request
+     */
     private Request $request;
 
+    /**
+     * запрос
+     *
+     * @var Account
+     */
     public Account $account;
+
+    /**
+     * контакт
+     *
+     * @var Contact
+     */
     public Contact $contact;
+
+    /**
+     * лид
+     *
+     * @var Lead
+     */
     public Lead $lead;
+
+
+    /**
+     * лид
+     *
+     * @var Customer
+     */
     public Customer $customer;
 
+    /**
+     * ответственный пользователь
+     *
+     * @var int
+     */
     public int $responsibleUser;
 
     /**
@@ -57,7 +102,9 @@ class Amo
     }
 
     /**
+     * сетинг ответсвенного юзера
      *
+     * @return void
      */
     private function initData()
     {
@@ -83,7 +130,9 @@ class Amo
     }
 
     /**
+     * инициализация
      *
+     * @return void
      */
     public function init()
     {
@@ -92,7 +141,9 @@ class Amo
     }
 
     /**
+     * инициализация
      *
+     * @return void
      */
     public function callInit()
     {
@@ -101,7 +152,9 @@ class Amo
     }
 
     /**
+     * вызов роута
      *
+     * @return void
      */
     public function callRoute()
     {
@@ -117,7 +170,9 @@ class Amo
     }
 
     /**
+     * поменять статус
      *
+     * @return void
      */
     public function callStatus()
     {
@@ -130,7 +185,9 @@ class Amo
     }
 
     /**
+     * забрать сообщение
      *
+     * @return void
      */
     public function messageGet()
     {
@@ -151,7 +208,10 @@ class Amo
     }
 
     /**
+     * set data by contact id
+     *
      * @param $id
+     * @return void
      */
     public function setDataByContactId($id)
     {
@@ -162,6 +222,8 @@ class Amo
     }
 
     /**
+     * set data for contact
+     *
      * @return Contact
      */
     public function setContactData(): Contact
@@ -174,6 +236,8 @@ class Amo
     }
 
     /**
+     * сделать юзера ответственным
+     *
      * @return int
      */
     private function setResponsibleUser(): int

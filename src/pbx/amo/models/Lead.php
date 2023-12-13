@@ -6,129 +6,252 @@ use app\src\pbx\Model;
 
 /**
  * Class Lead
+ * @property mixed $isNew
+ * @property mixed $id
+ * @property mixed $name
+ * @property mixed $first_name
+ * @property mixed $last_name
+ * @property mixed $responsible_user_id
+ * @property mixed $created_by
+ * @property mixed $created_at
+ * @property mixed $updated_at
+ * @property mixed $account_id
+ * @property mixed $updated_by
+ * @property mixed $group_id
+ * @property mixed $company
+ * @property mixed $leads
+ * @property mixed $is_deleted
+ * @property mixed $is_unsorted
+ * @property mixed $closest_task_at
+ * @property mixed $tags
+ * @property mixed $custom_fields
+ * @property mixed $custom_fields_values
+ * @property mixed $customers
+ * @property mixed $_links
+ * @property mixed $self
+ * @property mixed $time
+ * @property mixed $_embedded
+ * @property mixed $pipeline_id
+ * @property mixed $status_id
+ * @property mixed $main_contact
+ * @property mixed $price
+ * @property mixed $closed_at
+ * @property mixed $score
+ * @property mixed $contacts
+ * @property mixed $sale
+ * @property mixed $loss_reason_id
+ * @property mixed $pipeline
  * @package app\src\pbx\amo\models
  */
 class Lead extends Model
 {
     /**
-     * @var
+     * является ли новым
+     *
+     * @var mixed
      */
     public $isNew;
+
     /**
-     * @var
+     * неотсортирован ли
+     *
+     * @var mixed
      */
     public $isInUnsorted;
 
     /**
-     * @var
+     * айди
+     *
+     * @var mixed
      */
     public $id;
+
     /**
-     * @var
+     * имя
+     *
+     * @var mixed
      */
     public $name;
+
     /**
-     * @var
+     * ответственный юзер айди
+     *
+     * @var mixed
      */
     public $responsible_user_id;
+
     /**
-     * @var
+     * создан кем
+     *
+     * @var mixed
      */
     public $created_by;
+
     /**
-     * @var
+     * создан когда
+     *
+     * @var mixed
      */
     public $created_at;
+
     /**
-     * @var
+     * обновлен когда
+     *
+     * @var mixed
      */
     public $updated_at;
+
     /**
-     * @var
+     * айди аккаунта
+     *
+     * @var mixed
      */
     public $account_id;
+
     /**
-     * @var
+     * айди пайплана
+     *
+     * @var mixed
      */
     public $pipeline_id;
+
     /**
-     * @var
+     * айди статуса
+     *
+     * @var mixed
      */
     public $status_id;
+
     /**
-     * @var
+     * обновлен кем
+     *
+     * @var mixed
      */
     public $updated_by;
+
     /**
-     * @var
+     * удален ли
+     *
+     * @var mixed
      */
     public $is_deleted;
+
     /**
-     * @var
+     * основной контракт
+     *
+     * @var mixed
      */
     public $main_contact;
+
     /**
-     * @var
+     * айди группы
+     *
+     * @var mixed
      */
     public $group_id;
+
     /**
-     * @var
+     * цена
+     *
+     * @var mixed
      */
     public $price;
+
     /**
+     * компания
+     *
      * @var
      */
     public $company;
+
     /**
-     * @var
+     * закрыт когда
+     *
+     * @var mixed
      */
     public $closed_at;
+
     /**
-     * @var
+     * балл
+     *
+     * @var mixed
      */
     public $score;
+
     /**
-     * @var
+     * ближняя задача когда
+     *
+     * @var mixed
      */
     public $closest_task_at;
+
     /**
-     * @var
+     * теги
+     *
+     * @var mixed
      */
     public $tags;
+
     /**
-     * @var
+     * кастомные поля
+     *
+     * @var mixed
      */
     public $custom_fields;
+
     /**
-     * @var
+     * кастомные значения полей
+     *
+     * @var mixed
      */
     public $custom_fields_values;
+
     /**
-     * @var
+     * контакты
+     *
+     * @var mixed
      */
     public $contacts;
+
     /**
-     * @var
+     * продажа
+     *
+     * @var mixed
      */
     public $sale;
+
     /**
-     * @var
+     * айди по потере
+     *
+     * @var mixed
      */
     public $loss_reason_id;
+
     /**
-     * @var
+     * пайплайн
+     *
+     * @var mixed
      */
     public $pipeline;
+
     /**
-     * @var
+     * ссылки
+     *
+     * @var mixed
      */
     public $_links;
+
     /**
-     * @var
+     * время
+     *
+     * @var mixed
      */
     public $time;
+
     /**
-     * @var
+     * встроенный
+     *
+     * @var mixed
      */
     public $_embedded;
 }

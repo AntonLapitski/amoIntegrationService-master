@@ -13,6 +13,8 @@ use app\src\event\EventInterface;
 class PbxCallEvent implements EventInterface
 {
     /**
+     * вызов события работающего на модели
+     *
      * @param array $request
      * @return EventModelInterface
      */

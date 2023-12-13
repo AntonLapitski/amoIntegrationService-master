@@ -12,6 +12,8 @@ use yii\data\ActiveDataProvider;
 class ConfigSearch extends Config
 {
     /**
+     * Искать через конфиг объект с помощью переданных параметров
+     *
      * @param $params
      * @return ActiveDataProvider
      */

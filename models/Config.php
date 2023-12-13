@@ -6,7 +6,9 @@ use Yii;
 use yii\base\BaseObject;
 
 /**
- * This is the model class for table "config".
+ * Class Config
+ * Класс модель расширяет класс юи, по сути класс является моделью с унаследованными методами
+ * Модель таблицы конфиг.
  *
  * @property int $id
  * @property string $sid
@@ -16,15 +18,17 @@ use yii\base\BaseObject;
  * @property string $url
  * @property array $config
  * @property array $settings
- *
  * @property Account $account
  * @property Log[] $logs
  * @property User[] $users
+ * @package app\models
  */
 class Config extends \yii\db\ActiveRecord
 {
     /**
-     * {@inheritdoc}
+     * Возвращает название таблицы
+     *
+     * @return string
      */
     public static function tableName()
     {
@@ -32,7 +36,9 @@ class Config extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Правила валидации входных параметров
+     *
+     * @return array
      */
     public function rules()
     {
@@ -45,7 +51,9 @@ class Config extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Названия валидационных входных параметров
+     *
+     * @return array
      */
     public function attributeLabels()
     {
@@ -61,7 +69,9 @@ class Config extends \yii\db\ActiveRecord
     }
 
     /**
+     * Сетит урл и сохраняет в конце
      *
+     * @return void
      */
     public function afterFind()
     {
@@ -71,6 +81,8 @@ class Config extends \yii\db\ActiveRecord
     }
 
     /**
+     * Создание и сохранение объекта конфиг
+     *
      * @param $url
      * @return Config
      */

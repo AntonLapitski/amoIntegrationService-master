@@ -14,6 +14,8 @@ class Filter
 {
 
     /**
+     * фильтр через дату
+     *
      * @param $list
      * @return array
      */
@@ -30,7 +32,10 @@ class Filter
         return $result;
     }
 
+
     /**
+     * фильтр по совпадению номера мобильного телефона
+     *
      * @param $list
      * @param Phone $phone
      * @return bool|mixed
@@ -68,6 +73,8 @@ class Filter
 
 
     /**
+     * удаление записей, у которых закрытый статус
+     *
      * @param $list
      * @param $trigger
      * @return mixed

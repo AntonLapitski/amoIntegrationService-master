@@ -15,6 +15,8 @@ use app\src\pbx\amo\models\Customer;
 class CustomerHandler extends Handler
 {
     /**
+     * создать клиента
+     *
      * @param Contact $contact
      * @return Customer
      */
@@ -30,6 +32,8 @@ class CustomerHandler extends Handler
     }
 
     /**
+     * засетить клиента данными
+     *
      * @param Contact $contact
      * @param $data
      * @return Customer

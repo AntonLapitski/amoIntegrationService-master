@@ -9,20 +9,29 @@ use yii\helpers\Json;
 
 /**
  * Class AccountHandler
+ * @property string AMOJO_ID
+ * @property string SCOPE_ID
  * @package app\src\pbx\amo\handler
  */
 class AccountHandler extends Handler
 {
     /**
+     * название идентификатора
      *
+     * @var string
      */
     public const AMOJO_ID = 'amojo_id';
+
     /**
+     * название идентификатора
      *
+     * @var string
      */
     public const SCOPE_ID = 'scope_id';
 
     /**
+     * создание объекта класса
+     *
      * @return Account
      */
     public function set()
@@ -34,6 +43,8 @@ class AccountHandler extends Handler
     }
 
     /**
+     * получить объект по айди
+     *
      * @return bool|string
      */
     public function getAmojoId()
@@ -51,6 +62,8 @@ class AccountHandler extends Handler
     }
 
     /**
+     * получить скоуп по айди
+     *
      * @return bool|string
      */
     public function getScopeId()

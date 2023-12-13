@@ -3,21 +3,54 @@
 namespace app\src\pbx\client\models;
 
 /**
+ * Class Log
  * @property array $contact
  * @property array $lead
  * @property array $customer
  * @property array $user
  * @property array $settings
+ * @package app\src\pbx\client\models
  */
 class Log extends \app\models\Log
 {
+    /**
+     * контакт
+     *
+     * @var array
+     */
     public array $contact;
+
+    /**
+     * лид
+     *
+     * @var array
+     */
     public array $lead;
+
+    /**
+     * клиент
+     *
+     * @var array
+     */
     public array $customer;
+
+    /**
+     * юзер
+     *
+     * @var int
+     */
     public ?int $user;
+
+    /**
+     * настройки
+     *
+     * @var array
+     */
     public array $settings;
 
     /**
+     * находит верный лог
+     *
      * @param Request $request
      * @param $configId
      * @return Log
@@ -36,7 +69,9 @@ class Log extends \app\models\Log
     }
 
     /**
+     * сохраняет свойства объекта
      *
+     * @return void
      */
     public function afterFind()
     {
@@ -49,6 +84,8 @@ class Log extends \app\models\Log
     }
 
     /**
+     * меняем и сохраняем параметры
+     *
      * @param array $params
      * @return bool
      */

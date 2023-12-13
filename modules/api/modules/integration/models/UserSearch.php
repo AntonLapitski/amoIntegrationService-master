@@ -8,17 +8,22 @@ use yii\base\BaseObject;
 use yii\data\ActiveDataProvider;
 
 /**
- *
+ * Class UserSearch
  * @property string $url
+ * @package app\modules\api\modules\integration\models
  */
 class UserSearch extends User
 {
     /**
+     * Ссылка
+     *
      * @var null
      */
     public $url = null;
 
     /**
+     * Правила валидации
+     *
      * @return array
      */
     public function rules() {
@@ -29,6 +34,8 @@ class UserSearch extends User
     }
 
     /**
+     * Валидация и поиск с помощью объекта
+     *
      * @param $params
      * @return ActiveDataProvider
      */

@@ -5,7 +5,8 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "user".
+ * Class Model
+ * Класс модель, базовый, но унаследован от юи модели
  *
  * @property int $id
  * @property string $sid
@@ -14,11 +15,14 @@ use Yii;
  * @property boolean $is_top
  *
  * @property Config $config
+ * @package app\models
  */
 class User extends \yii\db\ActiveRecord
 {
     /**
-     * {@inheritdoc}
+     * Возвращает название таблицы
+     *
+     * @return string
      */
     public static function tableName()
     {
@@ -26,7 +30,9 @@ class User extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Правила валидации входных параметров
+     *
+     * @return array
      */
     public function rules()
     {
@@ -39,7 +45,9 @@ class User extends \yii\db\ActiveRecord
     }
 
     /**
+     * Сеттит свойство is_top и сохраняет в бвзу
      *
+     * @return void
      */
     public function afterFind()
     {
@@ -48,7 +56,9 @@ class User extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Названия валидационных входных параметров
+     *
+     * @return array
      */
     public function attributeLabels()
     {

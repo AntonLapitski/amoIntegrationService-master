@@ -5,20 +5,23 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "chat".
+ * Class Account
+ * Класс модель расширяет класс юи, по сути класс является моделью с унаследованными методами
  *
  * @property int $id
  * @property int $config_id
  * @property string $amojo_id
  * @property string $scope_id
  * @property string $account_id
- *
  * @property Config $config
+ * @package app\models
  */
 class Account extends \yii\db\ActiveRecord
 {
     /**
-     * {@inheritdoc}
+     * Возвращает название таблицы
+     *
+     * @return string
      */
     public static function tableName()
     {
@@ -26,6 +29,8 @@ class Account extends \yii\db\ActiveRecord
     }
 
     /**
+     * Правила валидации входных параметров
+     *
      * @return array
      */
     public function rules()

@@ -6,116 +6,222 @@ use app\src\pbx\Model;
 
 /**
  * Class Customer
+ * @property mixed $id
+ * @property mixed $name
+ * @property mixed $created_by
+ * @property mixed $created_at
+ * @property mixed $updated_at
+ * @property mixed $account_id
+ * @property mixed $status_id
+ * @property mixed $updated_by
+ * @property mixed $is_deleted
+ * @property mixed $main_contact
+ * @property mixed $tags
+ * @property mixed $custom_fields
+ * @property mixed $catalog_elements
+ * @property mixed $contacts
+ * @property mixed $responsible_user_id
+ * @property mixed $next_price
+ * @property mixed $closest_task_at
+ * @property mixed $periodicity
+ * @property mixed $period_id
+ * @property mixed $next_date
+ * @property mixed $ltv
+ * @property mixed $purchases_count
+ * @property mixed $average_check
+ * @property mixed $company
+ * @property mixed $_links
+ * @property mixed $time
+ * @property mixed $_embedded
  * @package app\src\pbx\amo\models
  */
 class Customer extends Model
 {
     /**
-     * @var
+     * идентификатор
+     *
+     * @var mixed
      */
     public $id;
+
     /**
-     * @var
+     * имя
+     *
+     * @var mixed
      */
     public $name;
+
     /**
-     * @var
+     * создан кем
+     *
+     * @var mixed
      */
     public $created_by;
+
     /**
-     * @var
+     * дата создания
+     *
+     * @var mixed
      */
     public $created_at;
+
     /**
-     * @var
+     * обновлен дата
+     *
+     * @var mixed
      */
     public $updated_at;
+
     /**
-     * @var
+     * айди аккаунта
+     *
+     * @var mixed
      */
     public $account_id;
+
     /**
-     * @var
+     * статус айди
+     *
+     * @var mixed
      */
     public $status_id;
+
     /**
-     * @var
+     * обновлен кем
+     *
+     * @var mixed
      */
     public $updated_by;
+
     /**
-     * @var
+     * удален ли
+     *
+     * @var mixed
      */
     public $is_deleted;
+
     /**
-     * @var
+     * основной контракт
+     *
+     * @var mixed
      */
     public $main_contact;
+
     /**
-     * @var
+     * теги
+     *
+     * @var mixed
      */
     public $tags;
+
     /**
-     * @var
+     * кастомные поля
+     *
+     * @var mixed
      */
     public $custom_fields;
+
     /**
-     * @var
+     * элементы каталога
+     *
+     * @var mixed
      */
     public $catalog_elements;
+
     /**
-     * @var
+     * контакты
+     *
+     * @var mixed
      */
     public $contacts;
+
     /**
-     * @var
+     * ответственный по юзер айди
+     *
+     * @var mixed
      */
     public $responsible_user_id;
+
     /**
-     * @var
+     * следующая цена
+     *
+     * @var mixed
      */
     public $next_price;
+
     /**
-     * @var
+     * ближайшая задача по времени
+     *
+     * @var mixed
      */
     public $closest_task_at;
+
     /**
-     * @var
+     * перодичность
+     *
+     * @var mixed
      */
     public $periodicity;
+
     /**
-     * @var
+     * айди периода
+     *
+     * @var mixed
      */
     public $period_id;
+
     /**
-     * @var
+     * следующая дата
+     *
+     * @var mixed
      */
     public $next_date;
+
     /**
-     * @var
+     *
+     * @var mixed
      */
     public $ltv;
+
     /**
-     * @var
+     * кол-во покупок
+     *
+     * @var mixed
      */
     public $purchases_count;
+
     /**
-     * @var
+     * средняя проверка
+     *
+     * @var mixed
      */
     public $average_check;
+
     /**
-     * @var
+     * компания
+     *
+     * @var mixed
      */
     public $company;
+
     /**
-     * @var
+     * ссылки
+     *
+     * @var mixed
      */
     public $_links;
+
     /**
-     * @var
+     * время
+     *
+     * @var mixed
      */
     public $time;
+
     /**
-     * @var
+     * встроенный
+     *
+     * @var mixed
      */
     public $_embedded;
 }

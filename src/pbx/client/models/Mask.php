@@ -13,6 +13,8 @@ use app\src\pbx\client\Instance;
 class Mask extends MaskData
 {
     /**
+     * преобразовать сущность и получить строку
+     *
      * @param $entity
      * @param $propertyName
      * @param null $contact
@@ -24,6 +26,8 @@ class Mask extends MaskData
     }
 
     /**
+     * преобразование строк в зависимости от параметров
+     *
      * @param $mask
      * @param null $contact
      * @return mixed

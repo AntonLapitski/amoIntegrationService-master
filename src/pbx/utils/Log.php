@@ -11,6 +11,8 @@ use yii\helpers\Json;
 class Log
 {
     /**
+     * удалить из бд запись
+     *
      * @param $sid
      */
     public static function removeDbRecord($sid): void
@@ -22,6 +24,8 @@ class Log
     }
 
     /**
+     * получить список записей, посиком через sid
+     *
      * @param $action
      * @param $sid
      * @return array
@@ -39,6 +43,8 @@ class Log
     }
 
     /**
+     * записать в лог найденные аттрибуты
+     *
      * @param $sid
      * @return array
      */

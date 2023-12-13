@@ -7,17 +7,22 @@ use app\src\integration\models\ContactModel;
 
 /**
  * Class Contact
+ * @property string $model
  * @package app\src\integration\components
  */
 class Contact extends Component
 {
     /**
+     * название модели
+     *
      * @var string
      */
     protected $model = 'app\src\integration\models\ContactModel';
 
 
     /**
+     * вернуть через айди контакт
+     *
      * @param $contactId
      * @return Model
      */
@@ -27,6 +32,8 @@ class Contact extends Component
     }
 
     /**
+     * вернуть чат данные
+     *
      * @param $data
      * @return Model
      */
@@ -36,6 +43,8 @@ class Contact extends Component
     }
 
     /**
+     * обновить контакт
+     *
      * @param $data
      * @return Model
      */
@@ -45,6 +54,8 @@ class Contact extends Component
     }
 
     /**
+     * обновить записи
+     *
      * @param $data
      * @param $entity
      * @param $id
@@ -57,6 +68,8 @@ class Contact extends Component
     }
 
     /**
+     * добавить записи
+     *
      * @param $data
      * @return Model
      */
@@ -66,6 +79,8 @@ class Contact extends Component
     }
 
     /**
+     * забрать чаты через айди контакта
+     *
      * @param $contactId
      * @return Model
      */
@@ -77,6 +92,8 @@ class Contact extends Component
 
 
     /**
+     * создать контакт
+     *
      * @param $data
      * @return Model
      */
@@ -86,6 +103,8 @@ class Contact extends Component
     }
 
     /**
+     * профильтровать контакты через телефон
+     *
      * @param $query
      * @return ContactModel
      */
@@ -95,6 +114,8 @@ class Contact extends Component
     }
 
     /**
+     * забрать клиентов
+     *
      * @param $query
      * @return \crmpbx\httpClient\Response
      */

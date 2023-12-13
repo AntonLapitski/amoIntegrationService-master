@@ -15,6 +15,7 @@ use yii\base\Model;
 
 
 /***
+ * Class Instance
  * @property Request $request
  * @property Config $config
  * @property Mask $mask
@@ -22,20 +23,66 @@ use yii\base\Model;
  * @property User $user
  * @property Phone $phone
  * @property Chat $chat
+ * @package app\src\pbx\client
  */
 class Instance extends Model
 {
+    /**
+     * запрос
+     *
+     * @var Request
+     */
     public Request $request;
+
+    /**
+     * конфиг
+     *
+     * @var Config
+     */
     public Config $config;
+
+    /**
+     * лог
+     *
+     * @var Log
+     */
     public Log $log;
+
+    /**
+     * юзер
+     *
+     * @var User
+     */
     public User $user;
+
+    /**
+     * номер телефона
+     *
+     * @var Phone
+     */
     public ?Phone $phone;
+
+    /**
+     * маска
+     *
+     * @var Mask
+     */
     public Mask $mask;
+
+    /**
+     * чат
+     *
+     * @var Phone
+     */
     public Chat $chat;
 
     /**
+     * Instance class constructor
+     *
+     *
      * @throws Exception
      * @throws \Throwable
+     * @throws \app\src\pbx\exceptions\ConfigException
      */
     public function __construct($request, $config = [])
     {
@@ -72,17 +119,19 @@ class Instance extends Model
     }
 
     public
-/**
- * @return null
- */
-function setPhone(): null|Phone
-    {
-        $phone = $this->chat->contact_phone ?? $this->request->phone;
-        if (null !== $phone)
-            return new Phone($phone, $this->config->settings);
+    /**
+     * засетить телефон
+     *
+     * @return null
+     */
+    function setPhone(): null|Phone
+        {
+            $phone = $this->chat->contact_phone ?? $this->request->phone;
+            if (null !== $phone)
+                return new Phone($phone, $this->config->settings);
 
-        return null;
+            return null;
+        }
+
+
     }
-
-
-}

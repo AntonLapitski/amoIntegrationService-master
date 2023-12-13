@@ -9,6 +9,8 @@ use yii\web\BadRequestHttpException;
 
 /**
  * Class Model
+ * Класс модель, базовый, но унаследован от юи модели
+ *
  * @package app\models
  */
 class Model extends \yii\base\Model
@@ -23,7 +25,9 @@ class Model extends \yii\base\Model
     }
 
     /**
-     * @param $data
+     * Сетит конфиг
+     *
+     * @param array $data
      * @return array
      */
     protected function config($data): array
@@ -37,6 +41,8 @@ class Model extends \yii\base\Model
     }
 
     /**
+     * Валидция модели из конфига
+     *
      * @param array $config
      * @return Model
      */

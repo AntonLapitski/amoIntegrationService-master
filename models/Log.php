@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
+ * Class Log
  * This is the model class for table "log".
  *
  * @property int $id
@@ -14,11 +15,14 @@ use Yii;
  * @property array $data
  *
  * @property Config $config
+ * @package app\models
  */
 class Log extends \yii\db\ActiveRecord
 {
     /**
-     * {@inheritdoc}
+     * Возвращает название таблицы
+     *
+     * @return string
      */
     public static function tableName()
     {
@@ -26,7 +30,9 @@ class Log extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Правила валидации входных параметров
+     *
+     * @return array
      */
     public function rules()
     {
@@ -40,7 +46,9 @@ class Log extends \yii\db\ActiveRecord
     }
 
     /**
-     * {@inheritdoc}
+     * Названия валидационных входных параметров
+     *
+     * @return array
      */
     public function attributeLabels()
     {
@@ -57,8 +65,10 @@ class Log extends \yii\db\ActiveRecord
     }
 
     /**
+     * Действие перед сохранением
+     *
      * @param $insert
-     * @return mixed
+     * @return bool
      */
     public function beforeSave($insert)
     {

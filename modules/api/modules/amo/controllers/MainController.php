@@ -18,8 +18,11 @@ use yii\web\BadRequestHttpException;
 class MainController extends AmoController
 {
     /**
+     * Отправить запрос проициализировав конфиг
+     *
      * @throws BadRequestHttpException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return array
      */
     public function actionExec()
     {

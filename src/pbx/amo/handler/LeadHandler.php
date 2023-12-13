@@ -10,10 +10,16 @@ use app\src\pbx\amo\models\Lead;
 
 /**
  * Class LeadHandler
+ * @property array $settings
  * @package app\src\pbx\amo\handler
  */
 class LeadHandler extends Handler
 {
+    /**
+     * настройки
+     *
+     * @var array
+     */
     protected ?array $settings;
 
     /**
@@ -28,6 +34,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * отфильтровать по статусу и дате
+     *
      * @param $list
      * @return array
      */
@@ -38,6 +46,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * вернуть лид
+     *
      * @param Contact $contact
      * @param $isBlocked
      * @return Lead
@@ -57,6 +67,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * установить данные для лида
+     *
      * @param Contact $contact
      * @param $data
      * @param $isBlocked
@@ -68,6 +80,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * созадать лид
+     *
      * @param Contact $contact
      * @return bool|null
      */
@@ -89,6 +103,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * забрать неотсортированный лид
+     *
      * @param Contact $contact
      * @param $data
      * @return |null
@@ -104,6 +120,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * создать лид через объект запроса
+     *
      * @param Contact $contact
      * @param $data
      * @return |null
@@ -118,6 +136,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * апдейт лида
+     *
      * @param $dealId
      * @param $responsibleUserId
      * @return |null
@@ -135,6 +155,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * заполнить новые данные запроса для нового лида
+     *
      * @param Contact $contact
      * @param $responsibleUserId
      * @param $fields
@@ -171,6 +193,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * заполнить новые данные запроса для нового лида, который неотсортирован
+     *
      * @param Contact $contact
      * @param $lead_data
      * @return array
@@ -216,6 +240,8 @@ class LeadHandler extends Handler
     }
 
     /**
+     * привязать сущность
+     *
      * @param $mainEntity
      * @param $bindingEntity
      * @return mixed

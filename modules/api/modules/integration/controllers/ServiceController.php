@@ -20,10 +20,16 @@ use crmpbx\logger\Logger;
 
 /**
  * Class ServiceController
+ * @property Logger $log;
  * @package app\modules\api\modules\integration\controllers
  */
 class ServiceController extends AmoController
 {
+    /**
+     * Обьект свойство логгер, для вывода инфо в лог приложения
+     *
+     * @var string
+     */
     private Logger $log;
 
     /**
@@ -39,8 +45,13 @@ class ServiceController extends AmoController
     }
 
     /**
+     *
+     * Сохранение изменений в аккаунт
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \yii\web\BadRequestHttpException
+     * @throws InstallException
+     * @return array
      */
     public function actionInstall(): array
     {
@@ -79,10 +90,13 @@ class ServiceController extends AmoController
     }
 
     /**
+     * Удаление токена у аккаунта и запись в логи
+     *
      * @throws \Throwable
      * @throws \yii\db\StaleObjectException
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \yii\web\BadRequestHttpException
+     * @return array
      */
     public function actionUninstall(): array
     {
@@ -109,7 +123,9 @@ class ServiceController extends AmoController
 
 
     /**
+     * Создание колл бэка на отработку экшена
      *
+     * @return void
      */
     public function actionCallback()
     {

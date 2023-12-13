@@ -15,6 +15,8 @@ class Config extends \app\models\Config implements Linkable
 {
 
     /**
+     * Дополнительные поля
+     *
      * @return array
      */
     public function extraFields(): array
@@ -25,6 +27,8 @@ class Config extends \app\models\Config implements Linkable
     }
 
     /**
+     * Забрать ссылки
+     *
      * @return array
      */
     public function getLinks()

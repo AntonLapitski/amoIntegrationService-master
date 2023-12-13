@@ -12,6 +12,8 @@ use app\src\pbx\amo\Amo;
 class CallHandler extends Handler
 {
     /**
+     * добавить записи контакту
+     *
      * @param Amo $amo
      * @return bool|null
      */
@@ -24,6 +26,8 @@ class CallHandler extends Handler
     }
 
     /**
+     * создать и вернуть массив с данными для амо
+     *
      * @param Amo $amo
      * @return array
      */
@@ -58,6 +62,8 @@ class CallHandler extends Handler
 
 
     /**
+     * вернуть входящий исходящий звонок
+     *
      * @param $dir
      * @return string
      */
@@ -68,6 +74,8 @@ class CallHandler extends Handler
     }
 
     /**
+     * статусы разговоров звонка
+     *
      * @param $status
      * @return false|int|string
      */

@@ -11,10 +11,16 @@ use phpDocumentor\Reflection\Types\False_;
 
 /**
  * Class Chat
+ * @property string $amojoId
  * @package app\src\integration\components
  */
 class Chat extends Component
 {
+    /**
+     * идентификатор
+     *
+     * @var string
+     */
     private string $amojoId;
 
     /**
@@ -30,6 +36,8 @@ class Chat extends Component
     }
 
     /**
+     * получить ответ через httpClient
+     *
      * @param $method
      * @param $route
      * @param null $body
@@ -42,6 +50,8 @@ class Chat extends Component
     }
 
     /**
+     * установить модель
+     *
      * @param Response $response
      * @return ChatModel|bool
      */
@@ -54,6 +64,8 @@ class Chat extends Component
     }
 
     /**
+     * получить модель чата с данными
+     *
      * @return ChatModel|bool
      */
     public function connect()
@@ -72,6 +84,8 @@ class Chat extends Component
     }
 
     /**
+     * проверить домены
+     *
      * @return string
      */
     public function amojoServer(): string
@@ -83,6 +97,8 @@ class Chat extends Component
     }
 
     /**
+     * проверить каналы
+     *
      * @return string
      */
     public function channelId(): string
@@ -94,6 +110,8 @@ class Chat extends Component
     }
 
     /**
+     * проверить секретные ключи каналов
+     *
      * @return string
      */
     public function channelSecret(): string

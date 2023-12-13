@@ -8,10 +8,16 @@ use app\src\event\model\EventModelInterface;
 
 /**
  * Class Event
+ * @property EventInterface $strategy
  * @package app\src\event
  */
 class Event implements EventInterface
 {
+    /**
+     * стратегия
+     *
+     * @var EventInterface
+     */
     private EventInterface $strategy;
 
     /**
@@ -24,7 +30,10 @@ class Event implements EventInterface
     }
 
     /**
+     * сетим свойство стратегия
+     *
      * @param EventInterface $strategy
+     * @return void
      */
     public function setStrategy(EventInterface $strategy)
     {
@@ -32,6 +41,8 @@ class Event implements EventInterface
     }
 
     /**
+     * меняем свойство стратегия
+     *
      * @param array $request
      * @return EventModelInterface
      */

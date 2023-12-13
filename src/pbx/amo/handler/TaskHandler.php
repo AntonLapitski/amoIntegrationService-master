@@ -9,11 +9,18 @@ use app\src\pbx\client\Instance;
 
 /**
  * Class TaskHandler
+ * @property array $settings
  * @package app\src\pbx\amo\handler
  */
 class TaskHandler extends Handler
 {
+    /**
+     * настройки
+     *
+     * @var array
+     */
     protected ?array $settings;
+
     /**
      * TaskHandler constructor.
      * @param Instance $instance
@@ -26,6 +33,8 @@ class TaskHandler extends Handler
     }
 
     /**
+     * задать амо сущность с необходимыми параметрами
+     *
      * @param Amo $amo
      * @return bool|null
      */
@@ -45,6 +54,8 @@ class TaskHandler extends Handler
     }
 
     /**
+     * создать амо сущность с необходимыми параметрами
+     *
      * @param $entityId
      * @param $responsibleUser
      * @param $entityType

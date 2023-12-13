@@ -9,13 +9,24 @@ use yii\helpers\Json;
 
 /**
  * Class PbxController
+ * Класс наследует от AppController и инициализирует и управляет Pbx вложенным свойством переменной
+ *
+ * @property Pbx $pbx
  * @package app\controllers
  */
 class PbxController extends AppController
 {
+    /**
+     * Объект переменная, внутри класса которой идет управление классом амо и моделью инстанс
+     * @var Pbx
+     */
     private Pbx $pbx;
 
     /**
+     * AppController constructor.
+     * @param $id
+     * @param $module
+     * @param $config
      * @throws \yii\base\ErrorException
      * @throws \yii\base\Exception
      */
@@ -27,7 +38,9 @@ class PbxController extends AppController
     }
 
     /**
-     * @return bool|mixed
+     *  Возвращает по сути статус или ответ в зависимости от action, который вызывается
+     *
+     * @return bool|array
      */
     public function actionCallInit()
     {
@@ -41,6 +54,8 @@ class PbxController extends AppController
     }
 
     /**
+     * Вызывет роут, пишут в лог и возвращает ответ после предыдущих двух действий
+     *
      * @return array
      */
     public function actionCallRoute()
@@ -52,7 +67,9 @@ class PbxController extends AppController
     }
 
     /**
-     * @return mixed
+     * Вызывает статус
+     *
+     * @return array
      */
     public function actionCallStatus()
     {
@@ -62,7 +79,9 @@ class PbxController extends AppController
     }
 
     /**
-     * @return mixed
+     * Инициализирует обьект амо данными, пишет в лог, возвращает ответ
+     *
+     * @return array
      */
     public function actionMessageGet()
     {
@@ -76,7 +95,9 @@ class PbxController extends AppController
     }
 
     /**
+     * Пишет по в сути в оставшийся лог
      *
+     * @return void
      */
     public function actionSetCallbackLog()
     {
@@ -96,6 +117,8 @@ class PbxController extends AppController
     }
 
     /**
+     * Создает клиента, отправлеяет пост запрос получает ответ, пишет в логи
+     *
      * @return bool
      */
     public function actionMessageSend()
@@ -114,7 +137,9 @@ class PbxController extends AppController
     }
 
     /**
-     * @return mixed
+     * Сетит статус сообщения в объекте амо и возвращает ответ
+     *
+     * @return array
      */
     public function actionMessageStatus()
     {
@@ -131,7 +156,9 @@ class PbxController extends AppController
     }
 
     /**
-     * @return mixed
+     * Интегрирует данные
+     *
+     * @return array
      */
     public function actionIntegrationData()
     {

@@ -10,14 +10,23 @@ use yii\base\ErrorException;
 
 /**
  * Class Config
+ * @property array $scheme
  * @package app\src\pbx\client\models
  */
 class Config extends \app\models\Config
 {
+    /**
+     * схема
+     *
+     * @var array
+     */
     public array $scheme;
 
     /**
+     * получить конфиг
+     *
      * @throws ConfigException
+     * @return Config
      */
     public static function get(Request $request)
     {
@@ -39,6 +48,8 @@ class Config extends \app\models\Config
     }
 
     /**
+     * получить юзера
+     *
      * @param $condition
      * @return \app\models\User|null
      */
@@ -59,7 +70,10 @@ class Config extends \app\models\Config
     }
 
     /**
+     * получить направление с настройками
+     *
      * @throws ConfigException
+     * @return object
      */
     public function withDirectionSettings($direction): Config
     {
@@ -73,6 +87,8 @@ class Config extends \app\models\Config
     }
 
     /**
+     * сделать маску для настроек
+     *
      * @return bool
      */
     public function maskSettings()
@@ -81,6 +97,8 @@ class Config extends \app\models\Config
     }
 
     /**
+     * имеет ли юзер ответсвенную сущность
+     *
      * @return bool
      */
     public function responsibleUserEntity()
@@ -89,6 +107,8 @@ class Config extends \app\models\Config
     }
 
     /**
+     * был ли вызов ответственного пользователя
+     *
      * @return bool
      */
     public function isCallToResponsibleUser()

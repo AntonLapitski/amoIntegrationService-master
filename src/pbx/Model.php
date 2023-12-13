@@ -20,6 +20,8 @@ class Model extends \yii\base\Model
     }
 
     /**
+     * построить конфиг по данным и вернуть его
+     *
      * @param array $config
      * @return array
      */

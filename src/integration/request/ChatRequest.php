@@ -8,12 +8,33 @@ use yii\helpers\Json;
 
 /**
  * Class ChatRequest
+ * @property string $date
+ * @property string $checksum
+ * @property string $xSignature
  * @package app\src\integration\request
  */
 class ChatRequest extends BaseRequest
 {
+
+    /**
+     * дата
+     *
+     * @var string
+     */
     private string $date;
+
+    /**
+     * проверка суммы
+     *
+     * @var string
+     */
     private string $checksum;
+
+    /**
+     * подпись
+     *
+     * @var string
+     */
     private string $xSignature;
 
     /**
@@ -34,6 +55,8 @@ class ChatRequest extends BaseRequest
     }
 
     /**
+     * установить хедеры
+     *
      * @param $headers
      * @return array
      */
@@ -47,6 +70,8 @@ class ChatRequest extends BaseRequest
     }
 
     /**
+     * установить подпись
+     *
      * @param $method
      * @param $url
      * @param $secret

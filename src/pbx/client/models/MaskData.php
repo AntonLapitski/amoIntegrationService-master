@@ -8,19 +8,30 @@ use app\src\pbx\amo\models\Contact;
 
 /**
  * Class MaskData
+ * @property Config $config
+ * @property Request $request
+ * @property Instance $instance
  * @package app\src\pbx\client\models
  */
 class MaskData
 {
     /**
-     * @var bool
+     * конйигуратор
+     *
+     * @var Config
      */
     protected $config;
+
     /**
+     * запрос
+     *
      * @var Request
      */
     protected $request;
+
     /**
+     * образ
+     *
      * @var Instance
      */
     protected $instance;
@@ -37,6 +48,8 @@ class MaskData
     }
 
     /**
+     * взять настройку конфига в заисимости от сущности
+     *
      * @param $entity
      * @param $propertyName
      * @return bool
@@ -47,6 +60,8 @@ class MaskData
     }
 
     /**
+     * получить студийный номер по номеру
+     *
      * @return mixed
      */
     protected function get_studio_phone_number()
@@ -55,6 +70,8 @@ class MaskData
     }
 
     /**
+     * получить студийный номер по имени
+     *
      * @return mixed
      */
     protected function get_studio_phone_fn()
@@ -63,6 +80,8 @@ class MaskData
     }
 
     /**
+     * получить направление
+     *
      * @return mixed
      */
     protected function get_direction()
@@ -71,6 +90,8 @@ class MaskData
     }
 
     /**
+     * забрать имя контакта
+     *
      * @param Contact $contact
      * @return mixed
      */
@@ -80,6 +101,8 @@ class MaskData
     }
 
     /**
+     * получить имя вызывающего имя
+     *
      * @return mixed
      */
     protected function get_caller_name()
@@ -88,6 +111,8 @@ class MaskData
     }
 
     /**
+     * получить тип события
+     *
      * @return mixed
      */
     protected function get_event_type()
@@ -96,6 +121,8 @@ class MaskData
     }
 
     /**
+     * получить телефон в выбранном формате
+     *
      * @return mixed
      */
     protected function get_phone_selected_format()

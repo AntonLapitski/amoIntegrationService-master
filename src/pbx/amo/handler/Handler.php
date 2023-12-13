@@ -10,17 +10,31 @@ use app\src\pbx\client\models\Config;
 
 /**
  * Class Handler
+ * @property Instance $instance
  * @package app\src\pbx\amo\handler
  */
 abstract class Handler
 {
 
-    public Instance $instance;
     /**
-     * @var
+     *  ключевой объект
+     *
+     * @var Instance
+     */
+    public Instance $instance;
+
+    /**
+     * маска
+     *
+     * @var mixed
      */
     public $mask;
-    
+
+    /**
+     * объект запроса
+     *
+     * @var Request
+     */
     public Request $request;
 
     /**
@@ -35,6 +49,8 @@ abstract class Handler
     }
 
     /**
+     * получить сделку по ссылке
+     *
      * @param $href
      * @return |null
      */
@@ -45,6 +61,8 @@ abstract class Handler
     }
 
     /**
+     * сетинг полей запроса
+     *
      * @param $fields
      * @return array
      */
@@ -67,6 +85,8 @@ abstract class Handler
     }
 
     /**
+     * сетинг тэгов запроса
+     *
      * @param $tags
      * @return array
      */

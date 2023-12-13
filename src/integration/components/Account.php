@@ -13,6 +13,8 @@ use crmpbx\httpClient\Response;
 class Account extends Component
 {
     /**
+     * установка модели
+     *
      * @param Response $response
      * @return AccountModel|bool
      */
@@ -25,6 +27,8 @@ class Account extends Component
     }
 
     /**
+     * получение настроеной модели
+     *
      * @return AccountModel|bool
      */
     public function get()

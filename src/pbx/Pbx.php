@@ -11,21 +11,36 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class Pbx
+ * @property Instance $request
+ * @property Amo $config
  * @package app\src\pbx
  */
 class Pbx
 {
-    public Instance $instance;
-    public Amo $amo;
 
     /**
+     * образ
      *
+     * @var Instance
      */
+    public Instance $instance;
+
+    /**
+     * amo
+     *
+     * @var Amo
+     */
+    public Amo $amo;
+
+
     const AMO_MESSAGE_SID = 'amo_message_sid';
 
     /**
-     * @throws \yii\base\Exception
-     * @throws \yii\base\ErrorException
+     * Pbx class constructor
+     *
+     * @param $request
+     * @throws \Throwable
+     * @throws exceptions\ConfigException
      */
     public function __construct($request)
     {
@@ -34,6 +49,8 @@ class Pbx
     }
 
     /**
+     * засетить в лог
+     *
      * @param bool $isEmpty
      * @return bool
      */
@@ -51,6 +68,8 @@ class Pbx
     }
 
     /**
+     * засетить в лог сообщение
+     *
      * @param $sid
      * @return bool
      */
@@ -63,6 +82,8 @@ class Pbx
     }
 
     /**
+     * получить ответ
+     *
      * @return array
      */
     public function getResponse(): array
@@ -84,6 +105,8 @@ class Pbx
     }
 
     /**
+     * получить ответственного юзера
+     *
      * @return \app\models\User|null
      */
     private function getResponsibleUser()
@@ -93,6 +116,8 @@ class Pbx
     }
 
     /**
+     * получить сообщение
+     *
      * @return array
      */
     public function getMessageRequest(): array

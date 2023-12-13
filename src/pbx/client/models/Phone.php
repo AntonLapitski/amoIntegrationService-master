@@ -8,17 +8,64 @@ use libphonenumber\PhoneNumberUtil;
 
 /**
  * Class Phone
+ * @property array $options
+ * @property null|string $regionCodeForNumber
+ * @property string $e164
+ * @property string $international
+ * @property string $noPlusE164
+ * @property string $national
+ * @property string $nationalNoSigns
  * @package app\src\pbx\client\models
  */
 class Phone
 {
+    /**
+     * опции
+     *
+     * @var array
+     */
     public array $options;
 
+    /**
+     * код для номера
+     *
+     * @var null|string
+     */
     public null|string $regionCodeForNumber;
+
+    /**
+     * особый код
+     *
+     * @var string
+     */
     public string $e164;
+
+    /**
+     * интернациональный
+     *
+     * @var string
+     */
     public string $international;
+
+    /**
+     * особый код
+     *
+     * @var string
+     */
     public string $noPlusE164;
+
+    /**
+     * внутри страны
+     *
+     * @var string
+     */
     public string $national;
+
+    /**
+     * внутри страны без регистрации
+     *
+     * @var string
+     */
     public string $nationalNoSigns;
 
     /**
@@ -46,6 +93,8 @@ class Phone
     }
 
     /**
+     * парсинг номера
+     *
      * @param $phone
      * @return string
      */
@@ -62,6 +111,8 @@ class Phone
     }
 
     /**
+     * Является ли номер валидным
+     *
      * @param PhoneNumberUtil $util
      * @param $phone
      * @param $region
@@ -73,6 +124,8 @@ class Phone
     }
 
     /**
+     * выбрать формат
+     *
      * @return mixed
      */
     public function getSelectedFormat()

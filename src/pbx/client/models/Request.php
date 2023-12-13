@@ -7,149 +7,304 @@ use app\src\pbx\Model;
 
 /**
  * Class Request
+ * @property mixed $event
+ * @property mixed $companySid
+ * @property mixed $companyCountry
+ * @property mixed $companyName
+ * @property mixed $accountSid
+ * @property mixed $phone
+ * @property mixed $direction
+ * @property mixed $caller
+ * @property mixed $from
+ * @property mixed $to
+ * @property mixed $called
+ * @property mixed $callSid
+ * @property mixed $callId
+ * @property mixed $time
+ * @property mixed $callerName
+ * @property mixed $callResult
+ * @property mixed $callDuration
+ * @property mixed $callDirection
+ * @property mixed $callRecordingUrl
+ * @property mixed $responsibleUser
+ * @property mixed $smsMessageSid
+ * @property mixed $messageStatus
+ * @property mixed $body
+ * @property mixed $url
+ * @property mixed $user
+ * @property mixed $requestSid
+ * @property mixed $studioNumber
+ * @property mixed $studioNumberFriendlyName
+ * @property mixed $studioNumberId
+ * @property mixed $_integration
+ * @property mixed $SendingMessageData
+ * @property mixed $messageMedia
+ * @property mixed $callList
+ * @property mixed $amoContactId
  * @package app\src\pbx\client\models
  */
 class Request extends Model
 {
     /**
-     * @var
+     * событие
+     *
+     * @var mixed
      */
     public $event;
+
     /**
-     * @var
+     * айди компании
+     *
+     * @var mixed
      */
     public $companySid;
+
     /**
-     * @var
+     * страна компании
+     *
+     * @var mixed
      */
     public $companyCountry;
+
     /**
-     * @var
+     * имя компании
+     *
+     * @var mixed
      */
     public $companyName;
+
     /**
-     * @var
+     * айди аккаунта
+     *
+     * @var mixed
      */
     public $accountSid;
+
     /**
-     * @var
+     * телефон
+     *
+     * @var mixed
      */
     public $phone;
+
     /**
-     * @var
+     * направление
+     *
+     * @var mixed
      */
     public $direction;
+
     /**
-     * @var
+     * звонящий
+     *
+     * @var mixed
      */
     public $caller;
+
     /**
-     * @var
+     * от кого
+     *
+     * @var mixed
      */
     public $from;
+
     /**
-     * @var
+     *
+     * кому
+     *
+     * @var mixed
      */
     public $to;
+
     /**
-     * @var
+     *
+     * позвонивший
+     *
+     * @var mixed
      */
     public $called;
+
     /**
-     * @var
+     *
+     *
+     *
+     * @var mixed
      */
     public $callSid;
+
     /**
-     * @var
+     *
+     * айди звонка
+     *
+     * @var mixed
      */
     public $callId;
+
     /**
-     * @var
+     *
+     * время
+     *
+     * @var mixed
      */
     public $time;
+
     /**
-     * @var
+     *
+     * наименование звонящего
+     *
+     * @var mixed
      */
     public $callerName;
+
     /**
-     * @var
+     * звонок результата
+     *
+     * @var mixed
      */
     public $callResult;
+
     /**
-     * @var
+     *
+     * продолжительность звонка
+     *
+     * @var mixed
      */
     public $callDuration;
+
     /**
-     * @var
+     * направление звонка
+     *
+     * @var mixed
      */
     public $callDirection;
+
     /**
-     * @var
+     * звонок записанный юрл
+     *
+     * @var mixed
      */
     public $callRecordingUrl;
+
     /**
-     * @var
+     * ответственный юзер
+     *
+     * @var mixed
      */
     public $responsibleUser;
+
     /**
-     * @var
+     * смс сообщение айди
+     *
+     * @var mixed
      */
     public $smsMessageSid;
+
     /**
-     * @var
+     *
+     * смс айди
+     *
+     * @var mixed
      */
     public $smsSid;
+
     /**
-     * @var
+     * сообщение айди
+     *
+     * @var mixed
      */
     public $messageSid;
+
     /**
-     * @var
+     *
+     * статус сообщения
+     *
+     * @var mixed
      */
     public $messageStatus;
+
     /**
-     * @var
+     *
+     * тело
+     *
+     * @var mixed
      */
     public $body;
+
     /**
-     * @var
+     * юрл
+     *
+     * @var mixed
      */
     public $url;
+
     /**
-     * @var
+     * юзер
+     *
+     * @var mixed
      */
     public $user;
+
     /**
-     * @var
+     * запрос айди
+     *
+     * @var mixed
      */
     public $requestSid;
+
     /**
-     * @var
+     *
+     * номер студии
+     *
+     * @var mixed
      */
     public $studioNumber;
+
     /**
-     * @var
+     * студийный номер дружелюбное имя
+     *
+     * @var mixed
      */
     public $studioNumberFriendlyName;
+
     /**
-     * @var
+     * студийный номер айди
+     *
+     * @var mixed
      */
     public $studioNumberId;
+
     /**
-     * @var
+     * интеграция
+     *
+     * @var mixed
      */
     public $_integration;
+
     /**
-     * @var
+     * отправка сообщения дата
+     *
+     * @var mixed
      */
     public $SendingMessageData;
-    public array $messageMedia = [];
+
     /**
-     * @var
+     * медия в сообщениях
+     *
+     * @var mixed
+     */
+    public array $messageMedia = [];
+
+    /**
+     * список звонящих
+     *
+     * @var mixed
      */
     public $callList;
+
     /**
-     * @var
+     * амо контакт айди
+     *
+     * @var mixed
      */
     public $amoContactId;
 
@@ -165,6 +320,8 @@ class Request extends Model
     }
 
     /**
+     * забрать событие айди
+     *
      * @return mixed
      */
     public function getEventSid()
@@ -175,7 +332,9 @@ class Request extends Model
     }
 
     /**
+     * засетить данные
      *
+     * @return void
      */
     protected function setData()
     {
@@ -186,7 +345,9 @@ class Request extends Model
     }
 
     /**
+     * разобраться с запросом амо сообщением
      *
+     * @return void
      */
     private function resolveAmoMessageRequest()
     {
@@ -201,6 +362,8 @@ class Request extends Model
     }
 
     /**
+     * установить время
+     *
      * @return bool|int
      */
     private function setTime()

@@ -18,13 +18,40 @@ use Yii;
 
 /**
  * Class Request
+ * @property Instance $instance
+ * @property HttpClient $client
+ * @property Logger $logger
+ * @property string $accessToken
  * @package app\src\pbx\amo\handler
  */
 class Request
 {
+    /**
+     * ключевой объект
+     *
+     * @var Instance
+     */
     public Instance $instance;
+
+    /**
+     * клиент
+     *
+     * @var HttpClient
+     */
     public HttpClient $client;
+
+    /**
+     * логгер
+     *
+     * @var Logger
+     */
     public Logger $logger;
+
+    /**
+     * доступ по токену
+     *
+     * @var string
+     */
     public string $accessToken;
 
     /**
@@ -39,6 +66,8 @@ class Request
     }
 
     /**
+     * добавить в файл логов
+     *
      * @param string $url
      * @param string $method
      * @param mixed $data
@@ -62,6 +91,8 @@ class Request
     }
 
     /**
+     * получить токен доступа
+     *
      * @return string
      */
     private function getAccessToken(): string
@@ -88,6 +119,8 @@ class Request
     }
 
     /**
+     * забрать ответ через чат запрос
+     *
      * @param $route
      * @param $body
      * @return |null
@@ -109,6 +142,8 @@ class Request
     }
 
     /**
+     * получить амо ответ через запрос
+     *
      * @param $method
      * @param $url
      * @param null $body
@@ -128,6 +163,8 @@ class Request
     }
 
     /**
+     * забрать список контактов
+     *
      * @param $query
      * @return bool
      */
@@ -141,6 +178,8 @@ class Request
 
 
     /**
+     * засетить статус сообщения
+     *
      * @param $scopeId
      * @param $messageId
      * @param $data
@@ -153,6 +192,8 @@ class Request
     }
 
     /**
+     * создать чат
+     *
      * @param $scopeId
      * @param $data
      * @return |null
@@ -164,6 +205,8 @@ class Request
     }
 
     /**
+     * отправить новое сообщение
+     *
      * @param $scopeId
      * @param $data
      * @return |null
@@ -175,6 +218,8 @@ class Request
     }
 
     /**
+     * засетить данные чата в контактах
+     *
      * @param $data
      * @return |null
      */
@@ -184,6 +229,8 @@ class Request
     }
 
     /**
+     * получить данные аккаунта
+     *
      * @param null $with
      * @return |null
      */
@@ -195,6 +242,8 @@ class Request
     }
 
     /**
+     * получить кастомные поля
+     *
      * @param $entity_type
      * @return |null
      */
@@ -205,6 +254,8 @@ class Request
     }
 
     /**
+     * получить чат по скоуп айди
+     *
      * @param $data
      * @return |null
      */
@@ -215,6 +266,8 @@ class Request
     }
 
     /**
+     * получить юзера по айди
+     *
      * @param $id
      * @return |null
      */
@@ -225,6 +278,8 @@ class Request
     }
 
     /**
+     * получить ответ по компании
+     *
      * @param $id
      * @return |null
      */
@@ -235,6 +290,8 @@ class Request
     }
 
     /**
+     * получить ответ по звонкам
+     *
      * @param $data
      * @return |null
      */
@@ -244,6 +301,8 @@ class Request
     }
 
     /**
+     * обновить контакт
+     *
      * @param $data
      * @return |null
      */
@@ -253,6 +312,8 @@ class Request
     }
 
     /**
+     * обновить лид
+     *
      * @param $data
      * @return |null
      */
@@ -262,6 +323,8 @@ class Request
     }
 
     /**
+     * обновить записи контакта
+     *
      * @param $data
      * @param $entity
      * @param $id
@@ -274,6 +337,8 @@ class Request
     }
 
     /**
+     * добавить данные контакта
+     *
      * @param $data
      * @return |null
      */
@@ -283,6 +348,8 @@ class Request
     }
 
     /**
+     * создать задачу
+     *
      * @param $data
      * @return |null
      */
@@ -292,6 +359,8 @@ class Request
     }
 
     /**
+     * добавить к неотсортированному
+     *
      * @param $data
      * @return |null
      */
@@ -301,6 +370,8 @@ class Request
     }
 
     /**
+     * создать лид
+     *
      * @param $data
      * @return |null
      */
@@ -310,6 +381,8 @@ class Request
     }
 
     /**
+     * получить лид
+     *
      * @param $leadId
      * @return |null
      */
@@ -320,6 +393,8 @@ class Request
     }
 
     /**
+     * установить кастомные лиды
+     *
      * @param $entity
      * @param $data
      * @return |null
@@ -331,6 +406,8 @@ class Request
     }
 
     /**
+     * забрать кастомные поля группы
+     *
      * @param $entity
      * @return |null
      */
@@ -341,6 +418,8 @@ class Request
     }
 
     /**
+     * засетить кастомные поля группы
+     *
      * @param $entity
      * @param $data
      * @return |null
@@ -352,6 +431,8 @@ class Request
     }
 
     /**
+     * получить чат через айди контакта
+     *
      * @param $contactId
      * @return |null
      */
@@ -362,6 +443,8 @@ class Request
     }
 
     /**
+     * создать контакт
+     *
      * @param $data
      * @return |null
      */
@@ -371,6 +454,8 @@ class Request
     }
 
     /**
+     * остсортировать контакт по телефону
+     *
      * @param $query
      * @return |null
      */
@@ -380,6 +465,8 @@ class Request
     }
 
     /**
+     * получить юзера
+     *
      * @param $confList
      * @param $userAmoId
      * @return |null
@@ -400,6 +487,8 @@ class Request
     }
 
     /**
+     * забрать юзеров
+     *
      * @return |null
      */
     public function getUsers()
@@ -409,6 +498,8 @@ class Request
     }
 
     /**
+     * получить контакт
+     *
      * @param $id
      * @return |null
      */
@@ -419,6 +510,8 @@ class Request
     }
 
     /**
+     * получить ссылку
+     *
      * @param $href
      * @return |null
      */
@@ -428,6 +521,8 @@ class Request
     }
 
     /**
+     * привязать сущность
+     *
      * @param $mainEntityId
      * @param $data
      * @param $entityType (string) {'leads','contacts','companies','customers'}

@@ -14,7 +14,10 @@ use yii\web\ForbiddenHttpException;
 class AmoController extends AppController
 {
     /**
+     *  Функция врзвращает некоторые моды или поведения управления контента
+     *
      * @throws ForbiddenHttpException
+     * @return array
      */
     public function behaviors(): array
     {
@@ -23,7 +26,10 @@ class AmoController extends AppController
     }
 
     /**
+     * Функция проверяет имеет ли юзер доступ
+     *
      * @throws ForbiddenHttpException
+     * @return void
      */
     public function checkAccess()
     {
